@@ -3,7 +3,7 @@ import CharacterTypes from '../data/CharacterTypes';
 const characterTypes = Object.values(CharacterTypes);
 
 export default class Character {
-  constructor(name, type, health, level, attack, defence) {
+  constructor(name, type) {
     if (typeof name === 'string' && name.length >= 2 && name.length <= 10) {
       this.name = name; // имя
     } else {
@@ -16,9 +16,9 @@ export default class Character {
       throw new Error(`Персонаж должен быть одного из типов: ${characterTypes.join(', ')}`);
     }
 
-    this.health = health; // уровень жизни
-    this.level = level; // уровень персонажа
-    this.attack = attack; // атака
-    this.defence = defence; // защита
+    this.health = 100; // уровень жизни
+    this.level = 1; // уровень персонажа
+    this.attack = undefined; // атака
+    this.defence = undefined; // защита
   }
 }
